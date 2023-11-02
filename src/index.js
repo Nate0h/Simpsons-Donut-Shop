@@ -2,17 +2,27 @@ import './styles.css';
 const content = document.getElementById('content');
 function buildHome(){
 
-   content.textContent = "Hi, I'm Homer Simpson";
+
    const title = document.createElement('div');
-   const header = document.createElement('div');
-   header.textContent = "HI Im Maggie";
-   buildHeader(header);
+   title.textContent = "The Simpson's Donut Shop";
+   content.appendChild(title);
+   const nav = document.createElement('div');
+   nav.textContent = "HI Im Maggie";
+   buildNavigation(nav);
    const body  = document.createElement('div');
+   buildBody(body);
+
    const footer = document.createElement('div');
+   buildFooter(footer);
 
 }
 
-function buildHeader(header){
+function buildNavigation(nav){
+
+
+   const donutHome = document.createElement('div');
+   const donutMenu = document.createElement('div');
+   const donutContact = document.createElement('div');
 
    const home = document.createElement('div');
    const menu = document.createElement('div');
@@ -22,21 +32,61 @@ function buildHeader(header){
    menu.textContent = "Ha";
    contact.textContent = "Ha";
 
-   const donut_home = document.createElement('img');
-   const donut_menu = document.createElement('img');
-   const donut_contact = document.createElement('img');
 
-   home.appendChild(donut_home);
-   menu.appendChild(donut_menu);
-   contact.appendChild(donut_contact);
+   donutHome.appendChild(home);
+   donutMenu.appendChild(menu);
+   donutContact.appendChild(contact);
+ 
+   nav.appendChild(donutHome);
+   nav.appendChild(donutMenu);
+   nav.appendChild(donutContact);
+   nav.classList.add('nav');
 
-   header.appendChild(home);
-   header.appendChild(menu);
-   header.appendChild(contact);
-
-   content.appendChild(header);
+   content.appendChild(nav);
 
 }
 
+function buildBody(body){
+   
+   const leftBody = document.createElement('div');
+   const rightBody = document.createElement('div');
+   leftBody.textContent = "Hi I'm Bart";
+   rightBody.textContent = "Hi I'm Lisa";
+
+   const about = document.createElement('div');
+   const aboutText = document.createElement('div');
+   about.appendChild(aboutText);
+
+   const order = document.createElement('div');
+   const orderButton = document.createElement('button');
+   order.appendChild(orderButton);
+
+   const hours = document.createElement('div');
+   const schedule = document.createElement('div');
+   hours.appendChild(schedule);
+
+   rightBody.appendChild(about);
+   rightBody.appendChild(order);
+   rightBody.appendChild(hours);
+
+   body.appendChild(leftBody);
+   body.appendChild(rightBody);
+   body.classList.add('body-container');
+   
+   content.appendChild(body);
+}
+
+function buildFooter(footer){
+
+   const author = document.createElement('div');
+   author.textContent = "Created By Nate-O";
+   const img = new Image();
+
+   footer.appendChild(author);
+   footer.appendChild(img);
+
+   content.appendChild(footer);
+
+}
 
 buildHome();
