@@ -27,3 +27,36 @@
     flex: 1;
     border: 2px solid red;
 }
+#grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+
+}
+
+.grid-cell{
+    background-color: orange;
+    border: 1px solid black;
+
+}
+
+.menu-img{
+
+}
+
+.item-container{
+
+}
+
+.item{
+
+}
+
+.price{
+
+}
+
+.item-description{
+
+}
