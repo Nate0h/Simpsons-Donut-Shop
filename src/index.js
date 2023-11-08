@@ -9,7 +9,8 @@ function buildHome(){
    nav.textContent = "HI Im Maggie";
    buildNavigation(nav);
    const body  = document.createElement('div');
-   buildMenuBody(body);
+   buildContactBody(body);
+   //buildMenuBody(body);
    //buildBody(body);
 
    const footer = document.createElement('div');
@@ -128,6 +129,89 @@ function buildMenuBody(body){
   body.appendChild(gridContainer);
   content.appendChild(body);
    
+}
+
+function buildContactBody(body){
+   const contactPage = document.createElement('div');
+   contactPage.textContent = "Wo Wa Wa WOO WOO";
+   body.appendChild(contactPage);//
+  
+
+
+   const container = document.createElement('div');
+
+   const location = document.createElement('div');
+   const locationText = document.createElement('p');
+   location.appendChild(locationText);
+
+   const contact = document.createElement('div');
+   const contactText = document.createElement('p');
+   contactText.textContent = "Yerrr";
+   contact.appendChild(contactText);
+
+   container.appendChild(location);
+   container.appendChild(contact);
+
+   body.appendChild(container);//
+  
+
+   const form = document.createElement('form');
+   form.setAttribute("method","post");
+   form.textContent = "skrilla";
+  
+/* Name Input */
+   const name = document.createElement('div');
+   name.textContent = "dwf";
+  
+   
+   const labelName = document.createElement('label');
+   labelName.setAttribute("for","name");
+   const inputName = document.createElement('input');
+   inputName.setAttribute("type", "text");
+   inputName.setAttribute("id","name");
+   
+  
+   name.appendChild(labelName);
+   name.appendChild(inputName);
+
+  
+/*Email Input */
+   const email = document.createElement('div');
+   const labelEmail = document.createElement('label');
+   labelEmail.setAttribute("for","email");
+   const inputEmail = document.createElement('input')
+   inputEmail.setAttribute("type", "email");
+   inputEmail.setAttribute("id","email");
+   inputEmail.setAttribute("name","email");
+   email.appendChild(labelEmail);
+   email.appendChild(inputEmail);
+
+/*Message Input*/
+   const message = document.createElement('div');
+   const labelMessage = document.createElement('label');
+   labelMessage.setAttribute("for","message");
+   const inputMessage = document.createElement('textarea')
+   inputMessage.setAttribute("rows", "20");
+   inputMessage.setAttribute("cols","60");
+   inputMessage.setAttribute("name","message");
+   message.appendChild(labelMessage);
+   message.appendChild(inputMessage);
+
+   /*Submit*/
+   const submit = document.createElement('button');
+   submit.setAttribute("id","submit");
+  
+   form.appendChild(name);
+   form.appendChild(email);
+   form.appendChild(message);
+   form.appendChild(submit);
+
+   body.appendChild(contactPage);
+   body.appendChild(container);
+   body.appendChild(form);
+   content.appendChild(body);
+
+
 }
 
 buildHome();
