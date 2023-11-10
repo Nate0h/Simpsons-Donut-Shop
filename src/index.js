@@ -3,14 +3,14 @@ const content = document.getElementById('content');
 function buildHome(){
 
    const title = document.createElement('div');
-   title.textContent = "The Simpson's Donut Shop";
+   title.textContent = "The Simpsons Mmm...Donut Shop";
+   title.classList.add('title');
    content.appendChild(title);
    const nav = document.createElement('div');
-   nav.textContent = "HI Im Maggie";
    buildNavigation(nav);
    const body  = document.createElement('div');
-   buildContactBody(body);
-   //buildMenuBody(body);
+   //buildContactBody(body);
+   buildMenuBody(body);
    //buildBody(body);
 
    const footer = document.createElement('div');
@@ -21,26 +21,48 @@ function buildHome(){
 function buildNavigation(nav){
 
 
-   const donutHome = document.createElement('div');
-   const donutMenu = document.createElement('div');
-   const donutContact = document.createElement('div');
-
    const home = document.createElement('div');
    const menu = document.createElement('div');
    const contact = document.createElement('div');
 
-   home.textContent = "Ha";
-   menu.textContent = "Ha";
-   contact.textContent = "Ha";
+   const donut1 = new Image();
+   donut1.classList.add("donut-img");
+   donut1.src = './pinkdonut.png';
+
+   const donut2 = new Image();
+   donut2.classList.add("donut-img");
+   donut2.src = './pinkdonut.png';
+
+   const donut3 = new Image();
+   donut3.classList.add("donut-img");
+   donut3.src = './pinkdonut.png';
+
+   const donutHome = document.createElement('div');
+   const donutMenu = document.createElement('div');
+   const donutContact = document.createElement('div');
+   donutHome.classList.add("donut");
+   donutMenu.classList.add("donut");
+   donutContact.classList.add("donut");
 
 
-   donutHome.appendChild(home);
-   donutMenu.appendChild(menu);
-   donutContact.appendChild(contact);
- 
-   nav.appendChild(donutHome);
-   nav.appendChild(donutMenu);
-   nav.appendChild(donutContact);
+   donutHome.textContent = "Home";
+   donutMenu.textContent = "Menu";
+   donutContact.textContent = "Contact";
+
+   home.appendChild(donut1);
+   home.appendChild(donutHome);
+   menu.appendChild(donut2);
+   menu.appendChild(donutMenu);
+   contact.appendChild(donut3);
+   contact.appendChild(donutContact);
+
+
+   nav.appendChild(home);
+   nav.appendChild(menu);
+   nav.appendChild(contact);
+
+  
+
    nav.classList.add('nav');
 
    content.appendChild(nav);
@@ -49,38 +71,65 @@ function buildNavigation(nav){
 
 function buildBody(body){
    
+   const homeContainer = document.createElement('div');
+   homeContainer.classList.add("homeContainer");
    const leftBody = document.createElement('div');
+   leftBody.classList.add("leftHome");
    const rightBody = document.createElement('div');
-   leftBody.textContent = "Hi I'm Bart";
-   rightBody.textContent = "Hi I'm Lisa";
+   
 
    const about = document.createElement('div');
+   about.textContent = "ABOUT US";
+   about.classList.add("about");
    const aboutText = document.createElement('div');
+   aboutText.classList.add("aboutText");
+   aboutText.textContent = "I'm here to tell you all about the most incredible donut shop in the world - Mmm...Donuts! When you walk into Mmm...Donuts, it's like stepping into a little slice of Springfield. You'll see all kinds of cool stuff, like pictures of me and all my classic catchphrases. And don't forget about the pink frosted sprinkled donuts–they're my absolute favorites!"
    about.appendChild(aboutText);
 
    const order = document.createElement('div');
    const orderButton = document.createElement('button');
+   orderButton.classList.add("orderButton");
+   orderButton.textContent = "Order Now!";
+
    order.appendChild(orderButton);
 
    const hours = document.createElement('div');
-   const schedule = document.createElement('div');
+   hours.textContent = "Open Monday thru Saturday";
+   hours.classList.add("hours");
+   const schedule = document.createElement('ul');
+   schedule.classList.add("schedule");
+   const time1 = document.createElement('li');
+   const time2 = document.createElement('li');
+   const time3 = document.createElement('li');
+   const time4 = document.createElement('li');
+
+   time1.textContent = "Homer's Rise and Shine... 6AM to 11AM";
+   time2.textContent = "D'oh-lunch Break... 11AM to 1PM";
+   time3.textContent = "Afternoon Delight, Mmm...Donuts... 1PM to 4PM";
+   time4.textContent = "Homer's Dinner Adventure...4PM to 8PM";
+
+   schedule.appendChild(time1);
+   schedule.appendChild(time2);
+   schedule.appendChild(time3);
+   schedule.appendChild(time4);
    hours.appendChild(schedule);
 
    rightBody.appendChild(about);
    rightBody.appendChild(order);
    rightBody.appendChild(hours);
 
-   body.appendChild(leftBody);
-   body.appendChild(rightBody);
-   body.classList.add('body-container');
+   homeContainer.appendChild(leftBody);
+   homeContainer.appendChild(rightBody);
+   body.appendChild(homeContainer);
+
    
    content.appendChild(body);
 }
 
 function buildFooter(footer){
-
+   footer.classList.add("footer");
    const author = document.createElement('div');
-   author.textContent = "Created By Nate-O";
+   author.textContent = "Created By NateO";
    const img = new Image();
 
    footer.appendChild(author);

@@ -8,25 +8,135 @@
     background-color: yellow;
 }
 
+@font-face {
+    font-family: simpson;
+    src: url('./font/demo.otf');
+}
+
 #content{
     display: flex;
     flex-direction: column;
     background-color: pink;
-    color:blue;
     min-height: 100vh;
 }
 
+.title{
+    font-size: 56px;
+    color: yellow;
+    -webkit-text-stroke: 2px red;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 3px solid red;
+    padding: 5px;
+    margin: 1rem;
+    font-family: simpson, Georgia, serif ;
+}
 .nav{
     display: flex;
-    border: 2px solid yellow;
+    padding: 5px;
+    justify-content: space-evenly;
+    background-image: url("./sprinklesfall.gif");
+    background-repeat: circle;
+   
+    border: 3px solid red;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.body-container{
+.donut{
+    font-family: simpson;
+    width: 150px;
+    background-color: rgb(241, 216, 171);
+    border: 2px solid black;
+    border-radius: 13px;
+    box-shadow: red 0px 2px 4px 0px inset;
+    color: lightblue;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 2px black;
+    font-size: 34px;
+    padding: 4px;
+    text-align: center;
+}
+.donut-img{
+    width: 135px;
+    height: 135px;
+}
+
+.homeContainer{
     display: flex;
-    align-content: space-between;
+    justify-content: space-between;
     flex: 1;
     border: 2px solid red;
+   min-height: 75vh;
 }
+
+.leftHome{
+    background-image: url('./homer.jpeg');
+    background-size: cover;
+    border-right-color: black;
+    width: 55vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.about, .hours{
+    font-size: 34px;
+    font-family: simpson, Georgia;
+    color: yellow;
+    -webkit-text-stroke: 2px red;
+    margin-right: 5px;
+
+}
+
+.aboutText{
+    width: 41vw;
+    margin-top: 10px;
+    font-size: 24px;
+    color: yellow;
+    -webkit-text-stroke: .2px black;
+    line-height: 1.5em;
+}
+
+.orderButton{
+    justify-self: center;
+    font-family: simpson;
+    width: 300px;
+    margin: 20px;
+    margin-left: 100px;
+    background-color: rgb(241, 216, 171);
+    border: 2px solid black;
+    border-radius: 13px;
+    box-shadow: red 0px 2px 4px 0px inset;
+    color: lightblue;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 2px black;
+    font-size: 34px;
+    padding: 4px;
+    text-align: center;
+    
+}
+
+.schedule{
+    font-size: 24px;
+    margin-top: 10px;
+    color: yellow;
+    -webkit-text-stroke: .2px black;
+    list-style: none;
+}
+
+.footer{
+    font-family: simpson;
+    height: 55px;
+    padding: 5px;
+    color: yellow;
+    -webkit-text-stroke: .2px black;
+    background-color: lightblue;
+    border: 1px solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+
+
 #grid-container{
     display: grid;
     grid-template-columns: repeat(2, 100px);
