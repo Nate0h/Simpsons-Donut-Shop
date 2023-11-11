@@ -148,33 +148,68 @@ function buildMenuBody(body){
    for (let i = 1; i <= 8; i++ ){
     const cell = document.createElement('div');
     cell.setAttribute("id",`cell-${i}`);
-    cell.textContent = "Yeahh";
     cell.classList.add('grid-cell');
 
-    const img = document.createElement('img');
-    img.classList.add('menu-img');
-    cell.appendChild(img);
+    const para = document.createElement('p');
+    cell.appendChild(para)
 
-    const itemContainer = document.createElement('div');
-    itemContainer.setAttribute("id",`item-${i}`);
-    const itemName = document.createElement('div');
-    const priceName = document.createElement('div');
-    itemName.classList.add('item');
-    priceName.classList.add('price');
-    itemContainer.classList.add('item-container');
-    itemContainer.appendChild(itemName);
-    itemContainer.appendChild(priceName);
-    cell.appendChild(itemContainer);
+    const img = document.createElement('img');
+    cell.appendChild(img);
     
-    const description = document.createElement('div');
-    description.setAttribute("id",`text-${i}`)
-    description.textContent = `cell-${i}`
-    description.classList.add('item-description');
-    cell.appendChild(description);
 
     gridContainer.appendChild(cell);
 
    }
+
+   const cellOne = gridContainer.querySelector("#cell-1");
+   const para1 = cellOne.querySelector("p");
+   const image1 = cellOne.querySelector("img");
+   image1.src = "./donuts/glazed.png";
+   para1.textContent = "1. Glazed Donut";
+
+   const cellTwo = gridContainer.querySelector("#cell-2");
+   const para2 = cellTwo.querySelector("p");
+   const image2 = cellTwo.querySelector("img");
+   image2.src = "./donuts/chocolate.png";
+   para2.textContent = "2. Chocolate Donut";
+
+   const cellThree = gridContainer.querySelector("#cell-3");
+   const para3 = cellThree.querySelector("p");
+   const image3 = cellThree.querySelector("img");
+   image3.src = "./donuts/pinkdip.png";
+   para3.textContent = "3. Homer Special";;
+
+   const cellFour = gridContainer.querySelector("#cell-4");
+   const para4 = cellFour.querySelector("p");
+   const image4 = cellFour.querySelector("img");
+   image4.src = "./donuts/jelly.png";
+   para4.textContent = "4. Jelly Donut";
+
+   const cellFive = gridContainer.querySelector("#cell-5");
+   const para5 = cellFive.querySelector("p");
+   const image5 = cellFive.querySelector("img");
+   image5.src = "./donuts/boston.png";
+   para5.textContent = "5. Boston Cream";
+
+   const cellSix = gridContainer.querySelector("#cell-6");
+   const para6 = cellSix.querySelector("p");
+   const image6 = cellSix.querySelector("img");
+   image6.src = "./donuts/sugar.png";
+   para6.textContent = "6. Sugar Donut";
+
+   const cellSeven = gridContainer.querySelector("#cell-7");
+   const para7 = cellSeven.querySelector("p");
+   const image7 = cellSeven.querySelector("img");
+   image7.src = "./donuts/vanilla.png";
+   para7.textContent = "7. Vanilla Donut";
+
+   const cellEight = gridContainer.querySelector("#cell-8");
+   const para8 = cellEight.querySelector("p");
+   const image8 = cellEight.querySelector("img");
+   image8.src = "./donuts/cronut.png";
+   para8.textContent = "8. Cronut";
+
+
   body.appendChild(gridContainer);
   content.appendChild(body);
    
