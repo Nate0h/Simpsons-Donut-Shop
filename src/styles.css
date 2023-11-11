@@ -57,8 +57,14 @@
     text-align: center;
 }
 .donut-img{
+    cursor: pointer;
     width: 135px;
     height: 135px;
+}
+
+.donut-img:hover{
+    transform: scale(1.5); 
+    transition: .4s ease-out; 
 }
 
 .homeContainer{

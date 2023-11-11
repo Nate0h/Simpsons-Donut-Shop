@@ -1,6 +1,8 @@
 import './styles.css';
 const content = document.getElementById('content');
-function buildHome(){
+
+function buildPage(buildBody){
+
 
    const title = document.createElement('div');
    title.textContent = "The Simpsons Mmm...Donut Shop";
@@ -8,10 +10,14 @@ function buildHome(){
    content.appendChild(title);
    const nav = document.createElement('div');
    buildNavigation(nav);
+
+   const donuts = document.querySelectorAll(".donut-img");
+   donuts.forEach( donut => donut.addEventListener("click", changeTabs));
+   
    const body  = document.createElement('div');
-   buildContactBody(body);
-   //buildMenuBody(body);
-   //buildBody(body);
+   body.setAttribute("id","body");
+  
+   buildBody(body);
 
    const footer = document.createElement('div');
    buildFooter(footer);
@@ -23,8 +29,11 @@ function buildNavigation(nav){
 
 
    const home = document.createElement('div');
+   home.setAttribute("id","home");
    const menu = document.createElement('div');
+   menu.setAttribute("id","menu");
    const contact = document.createElement('div');
+   contact.setAttribute("id","contact");
 
    const donut1 = new Image();
    donut1.classList.add("donut-img");
@@ -71,7 +80,7 @@ function buildNavigation(nav){
 
 }
 
-function buildBody(body){
+function buildHomeBody(body){
    
    const homeContainer = document.createElement('div');
    homeContainer.classList.add("homeContainer");
@@ -221,7 +230,7 @@ function buildContactBody(body){
    const contactPage = document.createElement('div');
    contactPage.textContent = "LEAVE US A MESSAGE";
    contactPage.classList.add("contactTitle");
-   body.appendChild(contactPage);//
+   body.appendChild(contactPage);
   
 
 
@@ -311,13 +320,28 @@ function buildContactBody(body){
 
 }
 
-buildHome();
 
-const donuts = document.querySelectorAll(".donut-img");
 
-alert(donuts.length);
-donuts.forEach( donut => donut.addEventListener("hover", function(e){
-   alert(e.target.name);
+buildPage(buildHomeBody);
+
+
+function changeTabs(e){
+   content.innerHTML= "";
+
+   if(e.target.parentElement.id == "home"){
+      buildPage(buildHomeBody);
+      }
+   else if(e.target.parentElement.id == "menu"){
+      buildPage(buildMenuBody);
+      } 
+   else if(e.target.parentElement.id == "contact"){
+      buildPage(buildContactBody);
+   }
+   
+
 }
-)
-);
+
+
+
+
+
