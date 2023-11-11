@@ -9,14 +9,15 @@ function buildHome(){
    const nav = document.createElement('div');
    buildNavigation(nav);
    const body  = document.createElement('div');
-   //buildContactBody(body);
-   buildMenuBody(body);
+   buildContactBody(body);
+   //buildMenuBody(body);
    //buildBody(body);
 
    const footer = document.createElement('div');
    buildFooter(footer);
 
 }
+
 
 function buildNavigation(nav){
 
@@ -66,6 +67,7 @@ function buildNavigation(nav){
    nav.classList.add('nav');
 
    content.appendChild(nav);
+
 
 }
 
@@ -217,21 +219,30 @@ function buildMenuBody(body){
 
 function buildContactBody(body){
    const contactPage = document.createElement('div');
-   contactPage.textContent = "Wo Wa Wa WOO WOO";
+   contactPage.textContent = "LEAVE US A MESSAGE";
+   contactPage.classList.add("contactTitle");
    body.appendChild(contactPage);//
   
 
 
    const container = document.createElement('div');
+   container.classList.add("contactContainer");
 
    const location = document.createElement('div');
+
+   location.textContent = "Location";
    const locationText = document.createElement('p');
+   locationText.textContent = "742 Evergreen Terrace in Springfield";
    location.appendChild(locationText);
 
    const contact = document.createElement('div');
+   contact.textContent = "Contact Us";
    const contactText = document.createElement('p');
-   contactText.textContent = "Yerrr";
+   const contactText2 = document.createElement('p');
+   contactText.textContent = "Email... mmmDonuts5178ATnotfakeemail.com";
+   contactText2.textContent = "Phone... (023) 145-2678"
    contact.appendChild(contactText);
+   contact.appendChild(contactText2);
 
    container.appendChild(location);
    container.appendChild(contact);
@@ -241,17 +252,15 @@ function buildContactBody(body){
 
    const form = document.createElement('form');
    form.setAttribute("method","post");
-   form.textContent = "skrilla";
   
 /* Name Input */
    const name = document.createElement('div');
-   name.textContent = "dwf";
-  
-   
    const labelName = document.createElement('label');
+   labelName.textContent = "Name: ";
    labelName.setAttribute("for","name");
    const inputName = document.createElement('input');
    inputName.setAttribute("type", "text");
+   inputName.setAttribute("placeholder", "e.g John Smith");
    inputName.setAttribute("id","name");
    
   
@@ -264,7 +273,9 @@ function buildContactBody(body){
    const labelEmail = document.createElement('label');
    labelEmail.setAttribute("for","email");
    const inputEmail = document.createElement('input')
+   labelEmail.textContent = "Email: ";
    inputEmail.setAttribute("type", "email");
+   inputEmail.setAttribute("placeholder","0028@notfake.com");
    inputEmail.setAttribute("id","email");
    inputEmail.setAttribute("name","email");
    email.appendChild(labelEmail);
@@ -277,12 +288,14 @@ function buildContactBody(body){
    const inputMessage = document.createElement('textarea')
    inputMessage.setAttribute("rows", "20");
    inputMessage.setAttribute("cols","60");
+   inputMessage.setAttribute("placeholder", "Tell us Anything...");
    inputMessage.setAttribute("name","message");
    message.appendChild(labelMessage);
    message.appendChild(inputMessage);
 
    /*Submit*/
    const submit = document.createElement('button');
+   submit.textContent = "Submit";
    submit.setAttribute("id","submit");
   
    form.appendChild(name);
@@ -299,3 +312,12 @@ function buildContactBody(body){
 }
 
 buildHome();
+
+const donuts = document.querySelectorAll(".donut-img");
+
+alert(donuts.length);
+donuts.forEach( donut => donut.addEventListener("hover", function(e){
+   alert(e.target.name);
+}
+)
+);
