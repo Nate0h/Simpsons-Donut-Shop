@@ -1,4 +1,4 @@
-# The Simpsons Mmm...Donut Shop 🍩 [Live Demo](https://nate0h.github.io/Restaurant-Page/)
+# The Simpsons Mmm...Donut Shop 🍩 [Live Demo](https://nate0h.github.io/Simpsons-Donut-Shop/)
 
 Welcome to The Simpsons Mmm...Donut Shop, where the sweet aroma of freshly baked donuts meets the iconic world of Homer Simpson. This website is crafted with JavaScript, HTML, CSS, and bundled using Webpack, creating a delightful online space for donut enthusiasts and fans of the legendary animated character.
 
